@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VueJS Demo</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script defer src="index.js"></script>
 </head>
 <body>
-    <div id="app">
-        {{ name }}
+    <div class="wrapper" id="app">
+        <h1 v-bind:title="name">{{ title }}</h1>
+        <p></p>
+        <template v-if="hasTodos">
+        <h2 v-on:mouseover="updateTime">Todo List: {{ time }}</h2>
+            <ul>
+                <li>{{todos[0]}}</li>
+                <li>{{todos[1]}}</li>
+                <li>{{todos[2]}}</li>
+            </ul>
+        </template>
+        <p v-else>There are no todos!</p>
     </div>
 </body>
 </html>

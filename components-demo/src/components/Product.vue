@@ -1,33 +1,36 @@
 <template>
-  <div class="hello">
-    <div>
-      <h2>{{ type }}</h2>
-      <div>{{ price }}</div>
-      <ul>
-          <li v-for="(ing, i) in ingredients" :key="i"> {{ ing }}</li>
-      </ul>
-    </div>
-  </div>
+   <div>
+        <slot name="type"></slot>
+        <slot name="price"></slot>
+        <slot name="ingredients"></slot>
+   </div>
 </template>
 
 <script>
 export default {
-  name: "Product",
-  props: {
-      type: String,
-      price: Number,
-      ingredients: Array
-  },
+  name: 'Product',
+//   props: {
+//       mealType: {
+//           type: String,
+//           required: true
+//       },
+//       price: Number,
+//       ingredients: {
+//           type: Array,
+//           validator: (arr) => {
+//               return arr.every((i) => typeof i === 'string');
+//           }
+//       },
+//       expirationDate: {
+//           type: Date,
+//           default: () => new Date()
+//       }
+//   },
   data: function() {
       return {
-
-      }
-  },
-  methods: {
-      changeType() {
       }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

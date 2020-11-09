@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-bind:value="title" v-on:input="chageTitle" >
+        {{title}}
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            props: {
+                message: String,
+                number: Number
+            },
+            data: {
+                title: 'Hello form Vue.js!',
+                age: 32
+            },
+            methods: {
+                chageTitle(e) {
+                    const newValue = e.target.value;
+                    this.title = newValue;
+                }
+            },
+            computed: {
+
+            },
+            watch: {
+
+            }
+        })
+    </script>
+</body>
+</html>
